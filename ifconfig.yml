@@ -1,0 +1,11 @@
+---
+- name: Hello ip
+  hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: hello ip cmd
+      command: ifconfig
+      register: ifconfig_result
+    - debug:
+        var: ifconfig_result
